@@ -1,4 +1,4 @@
-import { bubbleSort } from './utils/sorting.js';
+import { bubbleSort } from './utils/sorting';
 
 const sorted = bubbleSort([3, 6, 5, 7, 2, 2, 1]);
 
