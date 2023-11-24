@@ -1,5 +1,5 @@
-import { bubbleSort } from './utils/sorting';
+import { bubbleSort, selectionSort } from './utils/sorting';
 
-const sorted = bubbleSort([3, 6, 5, 7, 2, 2, 1]);
+const sorted = selectionSort([3, 6, 5, 7, 2, 2, 1]);
 
 console.log(sorted);
