@@ -31,3 +31,17 @@ export const selectionSort = (arr: number[]): number[] => {
 
   return arr;
 };
+
+// Worst case = O(n^2) Best case O(n)
+export const insertionSort = (arr: number[]): number[] => {
+  for (let i = 1; i < arr.length; i++) {
+    let currVal = arr[i];
+    let index = i;
+    for (let j = i - 1; j >= 0 && arr[j] > currVal; j--) {
+      arr[j + 1] = arr[j];
+      index = j;
+    }
+    arr[index] = currVal;
+  }
+  return arr;
+};
