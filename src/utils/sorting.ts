@@ -1,6 +1,8 @@
 import swap from './swap';
 
-// Worst case = O(n^2) Best case O(n)
+// BASIC SORTING ALGORITHMS
+
+// Worst case = O(n^2) | Average case = O(n^2) | Best case = O(n) | Space complexity = O(1)
 export const bubbleSort = (arr: number[]): number[] => {
   let noSwaps;
   for (let i = arr.length; i > 0; i--) {
@@ -16,7 +18,7 @@ export const bubbleSort = (arr: number[]): number[] => {
   return arr;
 };
 
-// Worst case = O(n^2) Best case O(n)
+// Worst case = O(n^2) | Average case = O(n^2) | Best case = O(n^2) | Space complexity = O(1)
 export const selectionSort = (arr: number[]): number[] => {
   for (let i = 0; i < arr.length; i++) {
     let lowest = i;
@@ -32,7 +34,7 @@ export const selectionSort = (arr: number[]): number[] => {
   return arr;
 };
 
-// Worst case = O(n^2) Best case O(n)
+// Worst case = O(n^2) | Average case = O(n^2) | Best case = O(n) | Space complexity = O(1)
 export const insertionSort = (arr: number[]): number[] => {
   for (let i = 1; i < arr.length; i++) {
     let currVal = arr[i];
@@ -44,4 +46,44 @@ export const insertionSort = (arr: number[]): number[] => {
     arr[index] = currVal;
   }
   return arr;
+};
+
+// INTERMEDIATE SORTING ALGORITHMS
+
+export const mergeSort = (arr: number[]): number[] => {
+  if (arr.length <= 1) return arr;
+
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+
+  return merge(left, right);
+};
+
+const merge = (arr1: number[], arr2: number[]): number[] => {
+  let results: number[] = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr2[j] > arr1[i]) {
+      results.push(arr1[i]);
+      i++;
+    } else {
+      results.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    results.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    results.push(arr2[j]);
+    j++;
+  }
+
+  return results;
 };
