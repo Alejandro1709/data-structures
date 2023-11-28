@@ -19,7 +19,7 @@ export class SinglyLinkedList<T> {
     this.length = 0;
   }
 
-  public push(value: T): void {
+  public push(value: T): SinglyLinkedList<T> | void {
     let node = new SLLNode(value);
 
     if (!this.head) {
@@ -33,5 +33,6 @@ export class SinglyLinkedList<T> {
     }
 
     this.length++;
+    return this;
   }
 }
