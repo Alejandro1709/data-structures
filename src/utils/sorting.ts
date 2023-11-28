@@ -50,6 +50,7 @@ export const insertionSort = (arr: number[]): number[] => {
 
 // INTERMEDIATE SORTING ALGORITHMS
 
+// Worst case = O(n log n) | Average case = O(n log n) | Best case = O(n log n) | Space complexity = O(n)
 export const mergeSort = (arr: number[]): number[] => {
   if (arr.length <= 1) return arr;
 
@@ -86,4 +87,39 @@ const merge = (arr1: number[], arr2: number[]): number[] => {
   }
 
   return results;
+};
+
+// Worst case = O(n log n) | Average case = O(n log n) | Best case = O(n log n) | Space complexity = O(n)
+export const quickSort = (
+  arr: number[],
+  left: number = 0,
+  right = arr.length - 1
+) => {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
+    //left
+    quickSort(arr, left, pivotIndex - 1);
+    //right
+    quickSort(arr, pivotIndex + 1, right);
+  }
+  return arr;
+};
+
+const pivot = (
+  arr: number[],
+  start: number = 0,
+  end: number = arr.length + 1
+) => {
+  let pivot = arr[start];
+  let swapIndex = start;
+
+  for (let i = start + 1; i < arr.length; i++) {
+    if (pivot > arr[i]) {
+      swapIndex++;
+      swap(arr, swapIndex, i);
+    }
+  }
+
+  swap(arr, start, swapIndex);
+  return swapIndex;
 };
