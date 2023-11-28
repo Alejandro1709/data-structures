@@ -1,11 +1,8 @@
-import {
-  bubbleSort,
-  selectionSort,
-  mergeSort,
-  quickSort,
-  insertionSort,
-} from './utils/sorting';
+import { SinglyLinkedList } from './singly-linked-list';
 
-const sorted = quickSort([3, 6, 5, 7, 2, 2, 1]);
+const list = new SinglyLinkedList<number>();
 
-console.log(sorted);
+list.push(1);
+list.push(2);
+
+console.log(list);
