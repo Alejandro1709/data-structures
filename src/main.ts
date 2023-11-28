@@ -7,3 +7,7 @@ list.push(2);
 list.push(3);
 
 console.log(list);
+
+list.pop();
+
+console.log(list);

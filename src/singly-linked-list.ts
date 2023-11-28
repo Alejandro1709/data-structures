@@ -35,4 +35,27 @@ export class SinglyLinkedList<T> {
     this.length++;
     return this;
   }
+
+  public pop(): SLLNode<T> | undefined {
+    if (!this.head) return undefined;
+
+    let current = this.head;
+    let prev = current;
+
+    while (current.next) {
+      prev = current;
+      current = current.next;
+    }
+
+    this.tail = prev;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+
+    return current;
+  }
 }
