@@ -2,9 +2,10 @@ import {
   bubbleSort,
   selectionSort,
   mergeSort,
+  quickSort,
   insertionSort,
 } from './utils/sorting';
 
-const sorted = mergeSort([3, 6, 5, 7, 2, 2, 1]);
+const sorted = quickSort([3, 6, 5, 7, 2, 2, 1]);
 
 console.log(sorted);
