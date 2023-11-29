@@ -102,4 +102,20 @@ export class SinglyLinkedList<T> {
 
     return current;
   }
+
+  public set(value: T, index: number): boolean {
+    let node = this.get(index);
+
+    if (!node) return false;
+
+    node.value = value;
+
+    return true;
+  }
+
+  public insert() {}
+
+  public remove() {}
+
+  public reverse() {}
 }

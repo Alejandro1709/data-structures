@@ -8,6 +8,10 @@ list.push(3);
 list.push(4);
 list.push(5);
 
-let num = list.get(3);
+let node = list.get(3);
 
-console.log(num);
+console.log(node);
+
+list.set(44, 3);
+
+console.log(list);
