@@ -73,4 +73,79 @@ export class SinglyLinkedList<T> {
 
     return current;
   }
+
+  public unshift(value: T): SinglyLinkedList<T> | void {
+    let node = new SLLNode(value);
+
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+
+    this.length++;
+    return this;
+  }
+
+  public get(index: number): SLLNode<T> | null {
+    if (index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== index && current !== null) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
+  }
+
+  public set(value: T, index: number): boolean {
+    let node = this.get(index);
+
+    if (!node) return false;
+
+    node.value = value;
+
+    return true;
+  }
+
+  public insert(value: T, index: number): boolean {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(value);
+    if (index === 0) return !!this.unshift(value);
+
+    let newNode = new SLLNode(value);
+    let prev = this.get(index - 1);
+
+    if (!prev) return false;
+
+    let temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+
+  public remove(index: number): SLLNode<T> | undefined {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let prevNode = this.get(index - 1);
+
+    if (!prevNode?.next) return undefined;
+
+    let removed = prevNode.next;
+    prevNode.next = removed.next;
+
+    this.length--;
+
+    return removed;
+  }
+
+  public reverse() {}
 }

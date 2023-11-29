@@ -8,10 +8,10 @@ list.push(3);
 list.push(4);
 list.push(5);
 
-list.pop();
+let node = list.get(3);
 
-console.log(list);
+console.log(node);
 
-list.shift();
+list.set(44, 3);
 
 console.log(list);
