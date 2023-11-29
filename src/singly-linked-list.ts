@@ -74,7 +74,7 @@ export class SinglyLinkedList<T> {
     return current;
   }
 
-  public unshift(value: T) {
+  public unshift(value: T): SinglyLinkedList<T> | void {
     let node = new SLLNode(value);
 
     if (!this.head) {
@@ -87,5 +87,19 @@ export class SinglyLinkedList<T> {
 
     this.length++;
     return this;
+  }
+
+  public get(index: number): SLLNode<T> | null {
+    if (index < 0 || index >= this.length) return null;
+
+    let counter = 0;
+    let current = this.head;
+
+    while (counter !== index && current !== null) {
+      current = current.next;
+      counter++;
+    }
+
+    return current;
   }
 }

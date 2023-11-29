@@ -8,10 +8,6 @@ list.push(3);
 list.push(4);
 list.push(5);
 
-list.pop();
+let num = list.get(3);
 
-console.log(list);
-
-list.shift();
-
-console.log(list);
+console.log(num);
