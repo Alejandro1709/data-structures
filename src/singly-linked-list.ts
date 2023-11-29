@@ -130,7 +130,22 @@ export class SinglyLinkedList<T> {
     return true;
   }
 
-  public remove(index: number) {}
+  public remove(index: number): SLLNode<T> | undefined {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let prevNode = this.get(index - 1);
+
+    if (!prevNode?.next) return undefined;
+
+    let removed = prevNode.next;
+    prevNode.next = removed.next;
+
+    this.length--;
+
+    return removed;
+  }
 
   public reverse() {}
 }
