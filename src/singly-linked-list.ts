@@ -113,9 +113,24 @@ export class SinglyLinkedList<T> {
     return true;
   }
 
-  public insert() {}
+  public insert(value: T, index: number): boolean {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(value);
+    if (index === 0) return !!this.unshift(value);
 
-  public remove() {}
+    let newNode = new SLLNode(value);
+    let prev = this.get(index - 1);
+
+    if (!prev) return false;
+
+    let temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+
+  public remove(index: number) {}
 
   public reverse() {}
 }
