@@ -19,6 +19,22 @@ export class SinglyLinkedList<T> {
     this.length = 0;
   }
 
+  public print(): void {
+    let arr = this.toArray();
+    console.log(arr.join(' -> '));
+  }
+
+  public toArray(): T[] {
+    let arr: T[] = [];
+    let current = this.head;
+
+    while (current) {
+      arr.push(current.value);
+      current = current.next;
+    }
+    return arr;
+  }
+
   public push(value: T): SinglyLinkedList<T> | void {
     let node = new SLLNode(value);
 
@@ -147,5 +163,22 @@ export class SinglyLinkedList<T> {
     return removed;
   }
 
-  public reverse() {}
+  public reverse(): SinglyLinkedList<T> | void {
+    let node = this.head;
+
+    this.head = this.tail;
+    this.tail = node;
+
+    let next;
+    let prev = null;
+
+    for (let i = 0; i < this.length && node; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  }
 }
