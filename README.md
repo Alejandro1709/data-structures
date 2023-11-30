@@ -4,13 +4,24 @@ This repo includes all (most of them) algorithms and data structures and their t
 
 ## Appendix
 
-- Sorting & Searching
-    - Bubble Sort
-    - Insertion Sort
-    - Selection Sort
-    - Merge Sort
-    - Quick Sort
-    - Linear Search
-    - Binary Search
-- Data Structures
-    - Singly Linked List
+- Sorting & Searching [X]
+  - Bubble Sort [X]
+  - Insertion Sort [X]
+  - Selection Sort [X]
+  - Merge Sort [X]
+  - Quick Sort [X]
+  - Linear Search [X]
+  - Binary Search [X]
+- Data Structures []
+  - Singly Linked List [X]
+  - Doubly Linked List []
+  - Circular Linked List []
+  - Stacks + Queues []
+  - Binary Search Trees []
+  - Tree Traversal []
+  - Binary Heaps []
+  - Hash Tables []
+  - Graphs []
+  - Graph Traversal []
+  - Dijkstra's Algorithm []
+  - Dynamic Programming []
