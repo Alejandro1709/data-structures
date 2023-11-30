@@ -1,17 +1,15 @@
 import { SinglyLinkedList } from './singly-linked-list';
 
-const list = new SinglyLinkedList<number>();
+const list = new SinglyLinkedList<string>();
 
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
+list.push('A');
+list.push('B');
+list.push('C');
+list.push('D');
 
-let node = list.get(3);
+list.print();
+// A -> B -> C -> D -> NULL
 
-console.log(node);
+list.reverse();
 
-list.set(44, 3);
-
-console.log(list);
+list.print();
