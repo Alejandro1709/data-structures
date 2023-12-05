@@ -25,3 +25,5 @@ This repo includes all (most of them) algorithms and data structures and their t
   - Graph Traversal []
   - Dijkstra's Algorithm []
   - Dynamic Programming []
+- Other []
+  - Fisher Yates Shuffle Algorithm []
