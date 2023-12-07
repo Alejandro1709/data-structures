@@ -145,4 +145,15 @@ export class DoublyLinkedList<T> {
     }
     return current;
   }
+
+  public set(index: number, value: T): boolean {
+    let node = this.get(index);
+
+    if (node !== null) {
+      node.value = value;
+      return true;
+    }
+
+    return false;
+  }
 }
