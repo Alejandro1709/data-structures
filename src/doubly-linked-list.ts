@@ -103,4 +103,20 @@ export class DoublyLinkedList<T> {
     this.length--;
     return oldHead;
   }
+
+  public unshift(value: T): DoublyLinkedList<T> | void {
+    let node = new DLLNode(value);
+
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.head.prev = node;
+      node.next = this.head;
+      this.head = node;
+    }
+
+    this.length++;
+    return this;
+  }
 }
