@@ -7,9 +7,4 @@ list.push('B');
 list.push('C');
 list.push('D');
 
-list.print();
-// NULL <-> A <-> B <-> C <-> D <-> NULL
-
-list.pop();
-
-list.print();
+console.log(list.get(1)?.value);

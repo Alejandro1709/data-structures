@@ -119,4 +119,30 @@ export class DoublyLinkedList<T> {
     this.length++;
     return this;
   }
+
+  public get(index: number): DLLNode<T> | null {
+    if (index < 0 || index >= this.length) return null;
+
+    let count = 0;
+    let current = this.head;
+
+    if (index <= this.length / 2) {
+      count = 0;
+      current = this.head;
+
+      while (count !== index && current) {
+        current = current.next;
+        count++;
+      }
+    } else {
+      count = this.length - 1;
+      current = this.head;
+
+      while (count !== index && current) {
+        current = current?.prev;
+        count--;
+      }
+    }
+    return current;
+  }
 }
