@@ -10,6 +10,10 @@ class DLLNode<T> {
   }
 }
 
+// INSERTION = DLL O(1) VS ARR O(n)
+// REMOVAL = DLL Best case O(1) Worst case O(n) VS ARR O(n)
+// SEARCHING = DLL O(n) VS ARR O(n)
+// ACCESSING = DLL O(n) VS ARR O(n)
 export class DoublyLinkedList<T> {
   public head: DLLNode<T> | null;
   public tail: DLLNode<T> | null;
@@ -179,5 +183,27 @@ export class DoublyLinkedList<T> {
 
     this.length++;
     return true;
+  }
+
+  public remove(index: number): DLLNode<T> | null {
+    if (index < 0 || index >= this.length) return null;
+    if (index === 0) this.shift();
+    if (index === this.length - 1) this.pop();
+
+    let removedNode = this.get(index);
+
+    if (!removedNode) return null;
+
+    let beforeNode = removedNode.prev;
+    let afterNode = removedNode.next;
+
+    if (beforeNode) beforeNode.next = afterNode;
+    if (afterNode) afterNode.prev = beforeNode;
+
+    removedNode.next = null;
+    removedNode.prev = null;
+
+    this.length--;
+    return removedNode;
   }
 }

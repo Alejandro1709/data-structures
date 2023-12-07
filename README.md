@@ -14,7 +14,7 @@ This repo includes all (most of them) algorithms and data structures and their t
   - Binary Search [X]
 - Data Structures []
   - Singly Linked List [X]
-  - Doubly Linked List []
+  - Doubly Linked List [X]
   - Circular Linked List []
   - Stacks + Queues []
   - Binary Search Trees []
