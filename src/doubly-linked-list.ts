@@ -57,4 +57,28 @@ export class DoublyLinkedList<T> {
     this.length++;
     return this;
   }
+
+  public pop(): DLLNode<T> | null {
+    if (!this.head) return null;
+
+    let poppedNode = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      if (!poppedNode) return null;
+
+      this.tail = poppedNode.prev;
+
+      if (this.tail) {
+        this.tail.next = null;
+      }
+
+      poppedNode.prev = null;
+    }
+
+    this.length--;
+    return poppedNode;
+  }
 }
