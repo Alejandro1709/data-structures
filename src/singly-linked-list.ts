@@ -8,6 +8,10 @@ class SLLNode<T> {
   }
 }
 
+// INSERTION = SLL O(1) VS ARR O(n)
+// REMOVAL = SLL Best case O(1) Worst case O(n) VS ARR O(n)
+// SEARCHING = SLL O(n) VS ARR O(n)
+// ACCESSING = SLL O(n) VS ARR O(n)
 export class SinglyLinkedList<T> {
   public head: SLLNode<T> | null;
   public tail: SLLNode<T> | null;
