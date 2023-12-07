@@ -81,4 +81,26 @@ export class DoublyLinkedList<T> {
     this.length--;
     return poppedNode;
   }
+
+  public shift(): DLLNode<T> | null {
+    if (!this.head) return null;
+
+    let oldHead = this.head;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    }
+
+    this.head = oldHead.next;
+
+    if (this.head) {
+      this.head.prev = null;
+    }
+
+    oldHead.next = null;
+
+    this.length--;
+    return oldHead;
+  }
 }
