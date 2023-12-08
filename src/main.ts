@@ -1,10 +1,19 @@
-import { DoublyLinkedList } from './doubly-linked-list';
+import { Queue } from './queue';
+import { Stack } from './stack';
 
-const list = new DoublyLinkedList<string>();
+const tasks = new Stack<string>();
 
-list.push('A');
-list.push('B');
-list.push('C');
-list.push('D');
+tasks.push('Say Hello');
+tasks.push('Buy PS5');
+tasks.push('Clean Room');
+
+console.log(tasks);
+
+const list = new Queue<string>();
+
+list.enqueue('Alejandro');
+list.enqueue('Rodolfo');
+
+list.dequeue();
 
 console.log(list);
