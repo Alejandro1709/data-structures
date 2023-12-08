@@ -9,6 +9,10 @@ class SNode<T> {
   }
 }
 
+// INSERTION - O(1)
+// REMOVAL - O(1)
+// SEARCHING - O(n)
+// REMOVAL - O(n)
 export class Stack<T> {
   public first: SNode<T> | null;
   public last: SNode<T> | null;
