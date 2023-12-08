@@ -13,9 +13,9 @@ class SLLNode<T> {
 // SEARCHING = SLL O(n) VS ARR O(n)
 // ACCESSING = SLL O(n) VS ARR O(n)
 export class SinglyLinkedList<T> {
-  public head: SLLNode<T> | null;
-  public tail: SLLNode<T> | null;
-  public length: number;
+  private head: SLLNode<T> | null;
+  private tail: SLLNode<T> | null;
+  private length: number;
 
   constructor() {
     this.head = null;
