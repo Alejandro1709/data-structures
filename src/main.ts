@@ -1,10 +1,9 @@
-import { DoublyLinkedList } from './doubly-linked-list';
+import { Stack } from './stack';
 
-const list = new DoublyLinkedList<string>();
+const tasks = new Stack<string>();
 
-list.push('A');
-list.push('B');
-list.push('C');
-list.push('D');
+tasks.push('Say Hello');
+tasks.push('Buy PS5');
+tasks.push('Clean Room');
 
-console.log(list);
+console.log(tasks);
