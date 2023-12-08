@@ -1,11 +1,27 @@
 // Stack using Linked Lists
 class SNode<T> {
-  public value: T;
-  public next: SNode<T> | null;
+  private value: T;
+  private next: SNode<T> | null;
 
   constructor(value: T) {
     this.value = value;
     this.next = null;
+  }
+
+  public getValue(): T {
+    return this.value;
+  }
+
+  public getNext(): SNode<T> | null {
+    return this.next;
+  }
+
+  public setValue(value: T): void {
+    this.value = value;
+  }
+
+  public setNext(next: SNode<T> | null): void {
+    this.next = next;
   }
 }
 
@@ -14,9 +30,9 @@ class SNode<T> {
 // SEARCHING - O(n)
 // REMOVAL - O(n)
 export class Stack<T> {
-  public first: SNode<T> | null;
-  public last: SNode<T> | null;
-  public size: number;
+  private first: SNode<T> | null;
+  private last: SNode<T> | null;
+  private size: number;
 
   constructor() {
     this.first = null;
@@ -33,7 +49,7 @@ export class Stack<T> {
     } else {
       let temp = this.first;
       this.first = node;
-      this.first.next = temp;
+      this.first.setNext(temp);
     }
 
     return ++this.size;
@@ -48,8 +64,8 @@ export class Stack<T> {
       this.last = null;
     }
 
-    this.first = this.first.next;
+    this.first?.setNext(this.first.getNext());
     this.size--;
-    return temp.value;
+    return temp.getValue();
   }
 }
