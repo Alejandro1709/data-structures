@@ -74,23 +74,38 @@ export class BinarySearchTree<T> {
     if (!this.root) return null;
 
     let current: TreeNode<T> = this.root;
+    let found: boolean = false;
 
-    while (true) {
+    while (current && !found) {
       if (value === current.getValue()) {
-        return current;
+        found = true;
       } else if (value > current.getValue()!) {
-        if (current.getRight()) {
-          current = current.getRight()!;
-        } else {
-          return current;
-        }
+        current = current.getRight()!;
       } else {
-        if (current.getLeft()) {
-          current = current.getLeft()!;
-        } else {
-          return current;
-        }
+        current = current.getLeft()!;
       }
     }
+
+    if (!found) return null;
+
+    return current;
+  }
+
+  public includes(value: T): boolean {
+    if (!this.root) return false;
+
+    let current: TreeNode<T> = this.root;
+    let found: boolean = false;
+
+    while (current && !found) {
+      if (value === current.getValue()) {
+        return true;
+      } else if (value > current.getValue()!) {
+        current = current.getRight()!;
+      } else {
+        current = current.getLeft()!;
+      }
+    }
+    return false;
   }
 }

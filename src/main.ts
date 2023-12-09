@@ -10,6 +10,9 @@ tree.insert(8);
 tree.insert(1);
 tree.insert(6);
 
-const foundNode = tree.find(3);
+if (tree.includes(3)) {
+  const node = tree.find(3);
+  console.log(node);
+}
 
-console.log(foundNode);
+console.log(tree);
