@@ -1,19 +1,10 @@
-import { Queue } from './queue';
-import { Stack } from './stack';
+import { BinarySearchTree } from './bst';
 
-const tasks = new Stack<string>();
+const tree = new BinarySearchTree<string>();
 
-tasks.push('Say Hello');
-tasks.push('Buy PS5');
-tasks.push('Clean Room');
+tree.insert('C');
+tree.insert('B');
+tree.insert('A');
+tree.insert('D');
 
-console.log(tasks);
-
-const list = new Queue<string>();
-
-list.enqueue('Alejandro');
-list.enqueue('Rodolfo');
-
-list.dequeue();
-
-console.log(list);
+console.log(tree);
