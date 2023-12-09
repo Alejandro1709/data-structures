@@ -69,4 +69,28 @@ export class BinarySearchTree<T> {
       }
     }
   }
+
+  public find(value: T): TreeNode<T> | null {
+    if (!this.root) return null;
+
+    let current: TreeNode<T> = this.root;
+
+    while (true) {
+      if (value === current.getValue()) {
+        return current;
+      } else if (value > current.getValue()!) {
+        if (current.getRight()) {
+          current = current.getRight()!;
+        } else {
+          return current;
+        }
+      } else {
+        if (current.getLeft()) {
+          current = current.getLeft()!;
+        } else {
+          return current;
+        }
+      }
+    }
+  }
 }
