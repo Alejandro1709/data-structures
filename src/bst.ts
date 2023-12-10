@@ -1,4 +1,4 @@
-import { Tree } from './tree';
+import Tree from './tree';
 import TreeNode from './utils/treeNode';
 
 export class BinarySearchTree<T> extends Tree<T> {
