@@ -10,9 +10,4 @@ tree.insert(8);
 tree.insert(1);
 tree.insert(6);
 
-if (tree.includes(3)) {
-  const node = tree.find(3);
-  console.log(node);
-}
-
-console.log(tree);
+console.log(tree.bfs());
