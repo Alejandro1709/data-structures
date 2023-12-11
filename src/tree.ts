@@ -32,4 +32,22 @@ export default class Tree<T> {
 
     return visited;
   }
+
+  public preOrderTraversal(): T[] | null {
+    let visited: T[] = [];
+    let current = this.root;
+
+    function helper(node: TreeNode<T>) {
+      visited.push(node.getValue()!);
+
+      if (node.getLeft()) helper(node.getLeft()!);
+      if (node.getRight()) helper(node.getRight()!);
+    }
+
+    if (!current) return null;
+
+    helper(current);
+
+    return visited;
+  }
 }

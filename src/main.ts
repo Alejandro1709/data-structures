@@ -2,12 +2,15 @@ import { BinarySearchTree } from './bst';
 
 const tree = new BinarySearchTree<number>();
 
+tree.insert(20);
+tree.insert(12);
+tree.insert(24);
 tree.insert(10);
-tree.insert(7);
-tree.insert(13);
-tree.insert(3);
-tree.insert(8);
-tree.insert(1);
-tree.insert(6);
+tree.insert(15);
+tree.insert(21);
+tree.insert(26);
 
-console.log(tree.bfs());
+let bfs = tree.bfs(); // [20, 12, 24, 10, 15, 21, 26]
+let preorder = tree.preOrderTraversal(); // [20, 12, 10, 15, 24, 21, 26]
+
+console.log(preorder);
