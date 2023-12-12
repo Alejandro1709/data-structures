@@ -12,7 +12,9 @@ tree.insert(20);
 let bfs = tree.bfs();
 let preorder = tree.preOrderTraversal();
 let inorder = tree.inOrderTraversal();
+let postOrder = tree.postOrderTraversal();
 
 console.log(`Bfs: ${bfs}`);
 console.log(`PreOrder: ${preorder}`);
 console.log(`InOrder: ${inorder}`);
+console.log(`PostOrder: ${postOrder}`);

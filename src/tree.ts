@@ -67,4 +67,21 @@ export default class Tree<T> {
 
     return visited;
   }
+
+  public postOrderTraversal(): T[] | null {
+    let visited: T[] = [];
+    let current = this.root;
+
+    function helper(node: TreeNode<T>) {
+      if (node.getLeft()) helper(node.getLeft()!);
+      if (node.getRight()) helper(node.getRight()!);
+      visited.push(node.getValue()!);
+    }
+
+    if (!current) return null;
+
+    helper(current);
+
+    return visited;
+  }
 }
