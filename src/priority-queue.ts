@@ -1,22 +1,25 @@
+import PQNode from './utils/priorityNode';
+
 // Time Complexity: O(log n)
-export class MaxBinaryHeap<T> {
-  private values: T[];
+export class PriorityQueue {
+  private values: PQNode[];
 
   constructor() {
     this.values = [];
   }
 
-  public getValues(): T[] {
+  public getValues(): PQNode[] {
     return this.values;
   }
 
-  public insert(value: T): void {
-    this.values.push(value);
+  public enqueue(value: string, priority: number): void {
+    let node = new PQNode(value, priority);
+    this.values.push(node);
     this.bubbleUp();
   }
 
-  public extractMax() {
-    const max = this.values[0];
+  public dequeue() {
+    const min = this.values[0];
     const end = this.values.pop();
 
     if (this.values.length > 0) {
@@ -24,7 +27,7 @@ export class MaxBinaryHeap<T> {
       this.sinkDown();
     }
 
-    return max;
+    return min;
   }
 
   private bubbleUp(): void {
@@ -35,7 +38,7 @@ export class MaxBinaryHeap<T> {
       let parentIndex = Math.floor((index - 1) / 2);
       let parent = this.values[parentIndex];
 
-      if (element <= parent) break;
+      if (element.getPriority() >= parent.getPriority()) break;
 
       this.values[parentIndex] = element;
       this.values[index] = parent;
@@ -56,7 +59,7 @@ export class MaxBinaryHeap<T> {
 
       if (leftChildIdx < length) {
         leftChild = this.values[leftChildIdx];
-        if (leftChild > element) {
+        if (leftChild.getPriority() < element.getPriority()) {
           swap = leftChildIdx;
         }
       }
@@ -64,8 +67,8 @@ export class MaxBinaryHeap<T> {
       if (rightChildIdx < length) {
         rightChild = this.values[rightChildIdx];
         if (
-          (swap === null && rightChild > element) ||
-          (swap !== null && rightChild > leftChild!)
+          (swap === null && rightChild.getPriority() < element.getPriority()) ||
+          (swap !== null && rightChild.getPriority() < leftChild!.getPriority())
         ) {
           swap = rightChildIdx;
         }
