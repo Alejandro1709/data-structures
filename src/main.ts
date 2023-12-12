@@ -1,20 +1,9 @@
-import { BinarySearchTree } from './bst';
+import { MaxBinaryHeap } from './max-binary-heap';
 
-const tree = new BinarySearchTree<number>();
+let heap = new MaxBinaryHeap();
 
-tree.insert(10);
-tree.insert(6);
-tree.insert(3);
-tree.insert(8);
-tree.insert(15);
-tree.insert(20);
+heap.insert(55);
+heap.insert(1);
+heap.insert(45);
 
-let bfs = tree.bfs();
-let preorder = tree.preOrderTraversal();
-let inorder = tree.inOrderTraversal();
-let postOrder = tree.postOrderTraversal();
-
-console.log(`Bfs: ${bfs}`);
-console.log(`PreOrder: ${preorder}`);
-console.log(`InOrder: ${inorder}`);
-console.log(`PostOrder: ${postOrder}`);
+console.log(heap.getValues());
