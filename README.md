@@ -20,7 +20,7 @@ This repo includes all (most of them) algorithms and data structures and their t
   - Stacks + Queues [X]
   - Priority Queues []
   - Binary Search Trees [X]
-  - Tree Traversal []
+  - Tree Traversal [X]
   - AVL Trees []
   - Binary Heaps []
   - Hash Tables []
