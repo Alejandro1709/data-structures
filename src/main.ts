@@ -1,10 +1,15 @@
-import { MaxBinaryHeap } from './max-binary-heap';
+import { PriorityQueue } from './priority-queue';
 
-let heap = new MaxBinaryHeap<number>();
+let priorityQueue = new PriorityQueue();
 
-heap.insert(55);
-heap.insert(1);
-heap.insert(45);
-heap.insert(78);
+priorityQueue.enqueue('common cold', 5);
+priorityQueue.enqueue('gunshot wound', 1);
+priorityQueue.enqueue('high fever', 4);
+priorityQueue.enqueue('broken arm', 1);
+priorityQueue.enqueue('glass in foot', 3);
 
-console.log(heap.extractMax());
+console.log(priorityQueue.getValues());
+
+priorityQueue.dequeue();
+
+console.log(priorityQueue.getValues());
