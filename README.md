@@ -22,7 +22,7 @@ This repo includes all (most of them) algorithms and data structures and their t
   - Binary Search Trees [X]
   - Tree Traversal [X]
   - AVL Trees []
-  - Binary Heaps []
+  - Binary Heaps [X]
   - Hash Tables []
   - Graphs []
   - Graph Traversal []
