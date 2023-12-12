@@ -1,15 +1,15 @@
-export class MaxBinaryHeap {
-  private values: number[];
+export class MaxBinaryHeap<T> {
+  private values: T[];
 
   constructor() {
-    this.values = [41, 39, 33, 18, 27, 12];
+    this.values = [];
   }
 
-  public getValues(): number[] {
+  public getValues(): T[] {
     return this.values;
   }
 
-  public insert(value: number): void {
+  public insert(value: T): void {
     this.values.push(value);
     this.bubbleUp();
   }
@@ -30,6 +30,3 @@ export class MaxBinaryHeap {
     }
   }
 }
-
-// [41,39,33,18,27,12,55]
-//  0  1  2  3  4  5  6
