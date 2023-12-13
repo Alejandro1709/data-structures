@@ -12,6 +12,8 @@ export default class HashTable {
       this.keyMap[index] = [];
     }
 
+    if (this.keyMap[index].includes(key)) return;
+
     this.keyMap[index].push([key, value]);
   }
 
@@ -27,6 +29,33 @@ export default class HashTable {
     }
 
     return undefined;
+  }
+
+  public keys(): string[] {
+    let keys: string[] = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        if (!keys.includes(this.keyMap[i][0][0])) {
+          keys.push(this.keyMap[i][0][0]);
+        }
+      }
+    }
+
+    return keys;
+  }
+
+  public values(): string[] {
+    let values: string[] = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        if (!values.includes(this.keyMap[i][0][1])) {
+          values.push(this.keyMap[i][0][1]);
+        }
+      }
+    }
+    return values;
   }
 
   private hash(key: string): number {

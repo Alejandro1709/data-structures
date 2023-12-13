@@ -9,7 +9,10 @@ hashTable.set('salmon', '#FA8072');
 hashTable.set('lightcoral', '#F08080');
 hashTable.set('mediumvioletred', '#C71585');
 hashTable.set('plum', '#DDA0DD');
+hashTable.set('plum', '#DDA0DD');
 
 let yellow = hashTable.get('yellow');
+let keys = hashTable.keys();
+let values = hashTable.values();
 
-console.log(yellow);
+console.log(keys);
