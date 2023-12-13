@@ -14,3 +14,7 @@ graph.addEdge('A', 'C');
 graph.addEdge('B', 'C');
 
 console.log(graph.getAdjacencyList());
+
+graph.removeEdge('B', 'C');
+
+console.log(graph.getAdjacencyList());
