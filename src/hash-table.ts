@@ -1,3 +1,6 @@
+// INSERTION - O(1)
+// DELETION - O(1)
+// ACCESS - O(1)
 export default class HashTable {
   private keyMap: any[][];
 
