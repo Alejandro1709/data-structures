@@ -1,15 +1,9 @@
-import { PriorityQueue } from './priority-queue';
+import HashTable from './hash-table';
 
-let priorityQueue = new PriorityQueue();
+let hashTable = new HashTable();
 
-priorityQueue.enqueue('common cold', 5);
-priorityQueue.enqueue('gunshot wound', 1);
-priorityQueue.enqueue('high fever', 4);
-priorityQueue.enqueue('broken arm', 1);
-priorityQueue.enqueue('glass in foot', 3);
+hashTable.set('apodo', 'pollo');
+hashTable.set('nombre', 'alejandro');
+hashTable.set('apellido', 'la rosa');
 
-console.log(priorityQueue.getValues());
-
-priorityQueue.dequeue();
-
-console.log(priorityQueue.getValues());
+console.log(hashTable);

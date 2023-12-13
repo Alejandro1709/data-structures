@@ -1,8 +1,18 @@
 export default class HashTable {
-  private keyMap: any[];
+  private keyMap: any[][];
 
-  constructor(size: number = 53) {
+  constructor(size: number = 4) {
     this.keyMap = new Array(size);
+  }
+
+  public set(key: string, value: string): void {
+    const index = this.hash(key);
+
+    if (!this.keyMap[index]) {
+      this.keyMap[index] = [];
+    }
+
+    this.keyMap[index].push([key, value]);
   }
 
   private hash(key: string): number {
