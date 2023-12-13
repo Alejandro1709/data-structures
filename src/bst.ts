@@ -1,7 +1,7 @@
 import Tree from './tree';
 import TreeNode from './utils/treeNode';
 
-export class BinarySearchTree<T> extends Tree<T> {
+export default class BinarySearchTree<T> extends Tree<T> {
   constructor() {
     super();
   }

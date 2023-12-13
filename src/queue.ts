@@ -1,34 +1,10 @@
-class QNode<T> {
-  private value: T;
-  private next: QNode<T> | null;
-
-  constructor(value: T) {
-    this.value = value;
-    this.next = null;
-  }
-
-  public getValue(): T {
-    return this.value;
-  }
-
-  public getNext(): QNode<T> | null {
-    return this.next;
-  }
-
-  public setValue(value: T): void {
-    this.value = value;
-  }
-
-  public setNext(next: QNode<T> | null): void {
-    this.next = next;
-  }
-}
+import QNode from './utils/queueNode';
 
 // INSERTION - O(1)
 // REMOVAL - O(1)
 // SEARCHING - O(n)
 // ACCESS - O(n)
-export class Queue<T> {
+export default class Queue<T> {
   private first: QNode<T> | null;
   private last: QNode<T> | null;
   private size: number;

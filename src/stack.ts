@@ -1,37 +1,13 @@
 // Stack using Linked Lists
-class SNode<T> {
-  private value: T;
-  private next: SNode<T> | null;
-
-  constructor(value: T) {
-    this.value = value;
-    this.next = null;
-  }
-
-  public getValue(): T {
-    return this.value;
-  }
-
-  public getNext(): SNode<T> | null {
-    return this.next;
-  }
-
-  public setValue(value: T): void {
-    this.value = value;
-  }
-
-  public setNext(next: SNode<T> | null): void {
-    this.next = next;
-  }
-}
+import SLLNode from './utils/singlyNode';
 
 // INSERTION - O(1)
 // REMOVAL - O(1)
 // SEARCHING - O(n)
 // REMOVAL - O(n)
-export class Stack<T> {
-  private first: SNode<T> | null;
-  private last: SNode<T> | null;
+export default class Stack<T> {
+  private first: SLLNode<T> | null;
+  private last: SLLNode<T> | null;
   private size: number;
 
   constructor() {
@@ -41,7 +17,7 @@ export class Stack<T> {
   }
 
   public push(value: T): number {
-    let node = new SNode(value);
+    let node = new SLLNode(value);
 
     if (!this.first) {
       this.first = node;

@@ -1,5 +1,5 @@
 // Time Complexity: O(log n)
-export class MaxBinaryHeap<T> {
+export default class MaxBinaryHeap<T> {
   private values: T[];
 
   constructor() {

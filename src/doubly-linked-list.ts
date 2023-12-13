@@ -1,20 +1,10 @@
-class DLLNode<T> {
-  public value: T;
-  public prev: DLLNode<T> | null;
-  public next: DLLNode<T> | null;
-
-  constructor(value: T) {
-    this.value = value;
-    this.next = null;
-    this.prev = null;
-  }
-}
+import DLLNode from './utils/doublyNode';
 
 // INSERTION = DLL O(1) VS ARR O(n)
 // REMOVAL = DLL Best case O(1) Worst case O(n) VS ARR O(n)
 // SEARCHING = DLL O(n) VS ARR O(n)
 // ACCESSING = DLL O(n) VS ARR O(n)
-export class DoublyLinkedList<T> {
+export default class DoublyLinkedList<T> {
   public head: DLLNode<T> | null;
   public tail: DLLNode<T> | null;
   public length: number;

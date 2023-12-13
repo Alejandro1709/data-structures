@@ -1,7 +1,7 @@
 import PQNode from './utils/priorityNode';
 
 // Time Complexity: O(log n)
-export class PriorityQueue {
+export default class PriorityQueue {
   private values: PQNode[];
 
   constructor() {
