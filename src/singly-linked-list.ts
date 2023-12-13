@@ -1,18 +1,10 @@
-class SLLNode<T> {
-  public value: T;
-  public next: SLLNode<T> | null;
-
-  constructor(value: T) {
-    this.value = value;
-    this.next = null;
-  }
-}
+import SLLNode from './utils/singlyNode';
 
 // INSERTION = SLL O(1) VS ARR O(n)
 // REMOVAL = SLL Best case O(1) Worst case O(n) VS ARR O(n)
 // SEARCHING = SLL O(n) VS ARR O(n)
 // ACCESSING = SLL O(n) VS ARR O(n)
-export class SinglyLinkedList<T> {
+export default class SinglyLinkedList<T> {
   private head: SLLNode<T> | null;
   private tail: SLLNode<T> | null;
   private length: number;
