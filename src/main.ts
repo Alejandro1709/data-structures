@@ -1,18 +1,7 @@
-import HashTable from './hash-table';
+import Graph from './graph';
 
-let hashTable = new HashTable(17);
+const graph = new Graph();
 
-hashTable.set('maroon', '#800000');
-hashTable.set('yellow', '#FFFF00');
-hashTable.set('olive', '#808000');
-hashTable.set('salmon', '#FA8072');
-hashTable.set('lightcoral', '#F08080');
-hashTable.set('mediumvioletred', '#C71585');
-hashTable.set('plum', '#DDA0DD');
-hashTable.set('plum', '#DDA0DD');
+graph.addVertex('A');
 
-let yellow = hashTable.get('yellow');
-let keys = hashTable.keys();
-let values = hashTable.values();
-
-console.log(keys);
+console.log(graph);
