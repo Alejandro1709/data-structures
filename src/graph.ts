@@ -14,4 +14,9 @@ export default class Graph {
   public addVertex(vertex: string): void {
     if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
   }
+
+  public addEdge(vertex1: string, vertex2: string): void {
+    this.adjacencyList[vertex1].push(vertex2);
+    this.adjacencyList[vertex2].push(vertex1);
+  }
 }
