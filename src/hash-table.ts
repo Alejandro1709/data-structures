@@ -1,7 +1,7 @@
 export default class HashTable {
   private keyMap: any[][];
 
-  constructor(size: number = 4) {
+  constructor(size: number = 53) {
     this.keyMap = new Array(size);
   }
 
@@ -13,6 +13,20 @@ export default class HashTable {
     }
 
     this.keyMap[index].push([key, value]);
+  }
+
+  public get(key: string): any[] | undefined {
+    let index = this.hash(key);
+
+    if (this.keyMap[index]) {
+      for (let i = 0; i < this.keyMap[index].length; i++) {
+        if (this.keyMap[index][i][0] === key) {
+          return this.keyMap[index][i][1];
+        }
+      }
+    }
+
+    return undefined;
   }
 
   private hash(key: string): number {
