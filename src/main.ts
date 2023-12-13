@@ -1,15 +1,18 @@
-import { PriorityQueue } from './priority-queue';
+import HashTable from './hash-table';
 
-let priorityQueue = new PriorityQueue();
+let hashTable = new HashTable(17);
 
-priorityQueue.enqueue('common cold', 5);
-priorityQueue.enqueue('gunshot wound', 1);
-priorityQueue.enqueue('high fever', 4);
-priorityQueue.enqueue('broken arm', 1);
-priorityQueue.enqueue('glass in foot', 3);
+hashTable.set('maroon', '#800000');
+hashTable.set('yellow', '#FFFF00');
+hashTable.set('olive', '#808000');
+hashTable.set('salmon', '#FA8072');
+hashTable.set('lightcoral', '#F08080');
+hashTable.set('mediumvioletred', '#C71585');
+hashTable.set('plum', '#DDA0DD');
+hashTable.set('plum', '#DDA0DD');
 
-console.log(priorityQueue.getValues());
+let yellow = hashTable.get('yellow');
+let keys = hashTable.keys();
+let values = hashTable.values();
 
-priorityQueue.dequeue();
-
-console.log(priorityQueue.getValues());
+console.log(keys);
