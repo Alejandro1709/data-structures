@@ -28,4 +28,14 @@ export default class Graph {
       (v) => v !== vertex1
     );
   }
+
+  public removeVertex(vertex: string): void {
+    while (this.adjacencyList[vertex].length > 0) {
+      let nextVertex = this.adjacencyList[vertex].pop();
+
+      this.removeEdge(vertex, nextVertex!);
+    }
+
+    delete this.adjacencyList[vertex];
+  }
 }

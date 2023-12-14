@@ -7,14 +7,19 @@ graph.addVertex('B');
 graph.addVertex('C');
 graph.addVertex('D');
 graph.addVertex('E');
-graph.addVertex('F');
 
 graph.addEdge('A', 'B');
-graph.addEdge('A', 'C');
 graph.addEdge('B', 'C');
+graph.addEdge('C', 'D');
+graph.addEdge('C', 'E');
+graph.addEdge('D', 'E');
 
 console.log(graph.getAdjacencyList());
 
-graph.removeEdge('B', 'C');
+graph.removeEdge('C', 'D');
+
+console.log(graph.getAdjacencyList());
+
+graph.removeVertex('D');
 
 console.log(graph.getAdjacencyList());
