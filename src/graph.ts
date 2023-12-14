@@ -16,17 +16,28 @@ export default class Graph {
   }
 
   public addEdge(vertex1: string, vertex2: string): void {
+    if (
+      this.adjacencyList[vertex1].includes(vertex2) &&
+      this.adjacencyList[vertex2].includes(vertex1)
+    )
+      return;
+
     this.adjacencyList[vertex1].push(vertex2);
     this.adjacencyList[vertex2].push(vertex1);
   }
 
   public removeEdge(vertex1: string, vertex2: string): void {
-    this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
-      (v) => v !== vertex2
-    );
-    this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
-      (v) => v !== vertex1
-    );
+    if (
+      this.adjacencyList[vertex1].includes(vertex2) &&
+      this.adjacencyList[vertex2].includes(vertex1)
+    ) {
+      this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+        (v) => v !== vertex2
+      );
+      this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+        (v) => v !== vertex1
+      );
+    }
   }
 
   public removeVertex(vertex: string): void {
