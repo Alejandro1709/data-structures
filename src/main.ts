@@ -15,6 +15,7 @@ graph.addEdge('B', 'D');
 graph.addEdge('C', 'E');
 graph.addEdge('D', 'E');
 graph.addEdge('D', 'F');
-graph.addEdge('F', 'E');
+graph.addEdge('E', 'F');
 
 console.log(graph.getAdjacencyList());
+console.log(graph.recursiveDFS('C'));
