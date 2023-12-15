@@ -73,4 +73,27 @@ export default class Graph {
 
     return result;
   }
+
+  public iterativeDFS(start: string): string[] {
+    const stack: string[] = [start];
+    const results: string[] = [];
+    const visited: VisitedListType = {};
+    let currentVertex: string;
+
+    visited[start] = true;
+
+    while (stack.length) {
+      currentVertex = stack.pop()!;
+      results.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      });
+    }
+
+    return results;
+  }
 }
