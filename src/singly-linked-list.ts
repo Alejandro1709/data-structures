@@ -25,9 +25,10 @@ export default class SinglyLinkedList<T> {
     let current = this.head;
 
     while (current) {
-      arr.push(current.value);
-      current = current.next;
+      arr.push(current.getValue());
+      current = current.getNext();
     }
+
     return arr;
   }
 
@@ -40,7 +41,7 @@ export default class SinglyLinkedList<T> {
     } else {
       if (!this.tail) return;
 
-      this.tail.next = node;
+      this.tail.setNext(node);
       this.tail = node;
     }
 
@@ -54,13 +55,13 @@ export default class SinglyLinkedList<T> {
     let current = this.head;
     let prev = current;
 
-    while (current.next) {
+    while (current.getNext()) {
       prev = current;
-      current = current.next;
+      current = current.getNext()!;
     }
 
     this.tail = prev;
-    this.tail.next = null;
+    this.tail.setNext(null);
     this.length--;
 
     if (this.length === 0) {
@@ -76,7 +77,7 @@ export default class SinglyLinkedList<T> {
 
     let current = this.head;
 
-    this.head = current.next;
+    this.head = current.getNext();
     this.length--;
 
     if (this.length === 0) {
@@ -93,7 +94,7 @@ export default class SinglyLinkedList<T> {
       this.head = node;
       this.tail = node;
     } else {
-      node.next = this.head;
+      node.setNext(this.head);
       this.head = node;
     }
 
@@ -108,7 +109,7 @@ export default class SinglyLinkedList<T> {
     let current = this.head;
 
     while (counter !== index && current !== null) {
-      current = current.next;
+      current = current.getNext();
       counter++;
     }
 
@@ -120,7 +121,7 @@ export default class SinglyLinkedList<T> {
 
     if (!node) return false;
 
-    node.value = value;
+    node.setValue(value);
 
     return true;
   }
@@ -135,9 +136,9 @@ export default class SinglyLinkedList<T> {
 
     if (!prev) return false;
 
-    let temp = prev.next;
-    prev.next = newNode;
-    newNode.next = temp;
+    let temp = prev.getNext();
+    prev.setNext(newNode);
+    newNode.setNext(temp);
     this.length++;
     return true;
   }
@@ -149,14 +150,14 @@ export default class SinglyLinkedList<T> {
 
     let prevNode = this.get(index - 1);
 
-    if (!prevNode?.next) return undefined;
+    if (!prevNode?.getNext()) return undefined;
 
-    let removed = prevNode.next;
-    prevNode.next = removed.next;
+    let removed = prevNode.getNext();
+    prevNode.setNext(removed?.getNext()!);
 
     this.length--;
 
-    return removed;
+    return removed!;
   }
 
   public reverse(): SinglyLinkedList<T> | void {
@@ -169,8 +170,8 @@ export default class SinglyLinkedList<T> {
     let prev = null;
 
     for (let i = 0; i < this.length && node; i++) {
-      next = node.next;
-      node.next = prev;
+      next = node.getNext();
+      node.setNext(prev);
       prev = node;
       node = next;
     }
