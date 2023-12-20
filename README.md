@@ -25,7 +25,7 @@ This repo includes all (most of them) algorithms and data structures and their t
   - Binary Heaps [X]
   - Hash Tables [X]
   - Graphs [X]
-  - Graph Traversal []
+  - Graph Traversal [X]
 - Other []
   - Dijkstra's Algorithm []
   - Dynamic Programming []
