@@ -97,4 +97,30 @@ export default class Graph {
 
     return results;
   }
+
+  public bfs(start: string): string[] {
+    const queue: string[] = [start];
+    const results: string[] = [];
+    const visited: VisitedListType = {};
+    let currentVertex;
+
+    visited[start] = true;
+
+    while (queue.length) {
+      currentVertex = queue.shift();
+
+      if (!currentVertex) return [];
+
+      results.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+
+    return results;
+  }
 }
