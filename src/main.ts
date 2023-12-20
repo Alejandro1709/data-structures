@@ -17,5 +17,4 @@ graph.addEdge('D', 'E');
 graph.addEdge('D', 'F');
 graph.addEdge('E', 'F');
 
-console.log(graph.recursiveDFS('A'));
 console.log(graph.iterativeDFS('A'));

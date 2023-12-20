@@ -83,6 +83,7 @@ export default class Graph {
     visited[start] = true;
 
     while (stack.length) {
+      console.log(stack);
       currentVertex = stack.pop()!;
       results.push(currentVertex);
 
